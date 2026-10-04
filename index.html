@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eff1e8">
+  <meta name="description" content="A four-year retrospective on how SaaS sales changed from 2022 to 2025: tighter budgets, efficiency, AI, and execution.">
+  <title>The SaaS Sales Reset, 2022–25</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #eff1e8;
+      --ink: #17201a;
+      --muted: #626b61;
+      --line: #cbd0c5;
+      --green: #c9f36b;
+      --green-dark: #2f5c3e;
+      --coral: #ff7557;
+      --cream: #faf9f3;
+      --mono: "DM Mono", monospace;
+      --sans: "DM Sans", sans-serif;
+      --display: "Space Grotesk", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .shell { width: min(1280px, calc(100% - 64px)); margin: 0 auto; }
+    .topbar { height: 74px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+    .wordmark { display: flex; align-items: center; gap: 10px; font: 700 13px var(--display); letter-spacing: .02em; text-decoration: none; }
+    .mark { display: grid; place-items: center; width: 27px; height: 27px; color: var(--paper); background: var(--ink); border-radius: 50%; font: 500 12px var(--mono); }
+    .top-nav { display: flex; align-items: center; gap: 30px; color: var(--muted); font-size: 12px; }
+    .top-nav a { text-decoration: none; }
+    .top-nav a:hover { color: var(--ink); }
+    .issue { font: 11px var(--mono); color: var(--muted); }
+    .hero { padding: 74px 0 72px; display: grid; grid-template-columns: 1fr .9fr; gap: 7.5%; align-items: center; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 25px; color: var(--green-dark); font: 11px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--coral); }
+    h1 { max-width: 670px; margin: 0; font: 600 clamp(54px, 6.6vw, 91px)/.96 var(--display); letter-spacing: -.055em; }
+    h1 span { color: var(--green-dark); }
+    .hero-copy { max-width: 485px; margin: 26px 0 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .hero-actions { display: flex; align-items: center; gap: 22px; margin-top: 30px; }
+    .button { display: inline-flex; align-items: center; gap: 14px; min-height: 46px; padding: 0 18px; color: var(--paper); background: var(--ink); border: 1px solid var(--ink); text-decoration: none; font-size: 12px; font-weight: 600; transition: background .2s, color .2s; }
+    .button:hover { color: var(--ink); background: transparent; }
+    .button svg { width: 14px; height: 14px; }
+    .text-link { color: var(--muted); font-size: 12px; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+    .hero-art { position: relative; min-height: 434px; isolation: isolate; }
+    .hero-photo { position: absolute; inset: 0 18px 24px 0; width: calc(100% - 18px); height: calc(100% - 24px); object-fit: cover; filter: saturate(.78); }
+    .hero-art::after { content: ""; position: absolute; z-index: -1; inset: 22px 0 0 23px; background: var(--green); }
+    .art-label { position: absolute; top: 18px; left: 18px; padding: 8px 10px; background: var(--cream); font: 10px var(--mono); text-transform: uppercase; }
+    .art-stamp { position: absolute; right: 0; bottom: 0; display: grid; place-items: center; width: 116px; height: 116px; padding: 18px; background: var(--coral); border-radius: 50%; text-align: center; font: 600 13px/1.15 var(--display); transform: rotate(8deg); }
+    .hero-caption { position: absolute; left: 0; bottom: -2px; padding-top: 11px; font: 10px var(--mono); color: var(--muted); }
+    .ticker { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); }
+    .ticker-item { min-height: 97px; padding: 20px 24px 18px 0; display: flex; align-items: center; gap: 14px; border-right: 1px solid var(--line); }
+    .ticker-item:not(:first-child) { padding-left: 22px; }
+    .ticker-item:last-child { border-right: 0; }
+    .ticker-year { align-self: flex-start; padding-top: 3px; color: var(--green-dark); font: 11px var(--mono); }
+    .ticker-title { font: 600 17px var(--display); letter-spacing: -.03em; }
+    .ticker-note { margin-top: 4px; color: var(--muted); font-size: 11px; }
+    .section { padding: 104px 0; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 36px; margin-bottom: 39px; }
+    .section-kicker { margin: 0 0 14px; color: var(--green-dark); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    h2 { margin: 0; font: 600 clamp(36px, 4vw, 55px)/1.04 var(--display); letter-spacing: -.05em; }
+    .section-intro { width: min(370px, 38%); margin: 0 0 4px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+    .timeline { display: grid; grid-template-columns: 310px 1fr; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .year-list { padding: 25px 24px 25px 0; border-right: 1px solid var(--line); }
+    .year-button { display: flex; align-items: center; justify-content: space-between; width: 100%; padding: 16px 14px; border: 0; border-bottom: 1px solid var(--line); color: var(--muted); background: transparent; text-align: left; cursor: pointer; font: 500 15px var(--display); transition: color .2s, background .2s; }
+    .year-button:last-child { border-bottom: 0; }
+    .year-button:hover { color: var(--ink); }
+    .year-button[aria-selected="true"] { color: var(--ink); background: var(--green); }
+    .year-button .year { font: 12px var(--mono); }
+    .year-button .arrow { opacity: 0; font-size: 17px; }
+    .year-button[aria-selected="true"] .arrow { opacity: 1; }
+    .year-detail { min-height: 350px; padding: 42px 5.5%; display: grid; grid-template-columns: 1fr 210px; gap: 7%; align-items: center; animation: reveal .32s ease both; }
+    @keyframes reveal { from { opacity: .25; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+    .detail-year { margin: 0 0 13px; color: var(--green-dark); font: 11px var(--mono); }
+    .year-detail h3 { max-width: 500px; margin: 0; font: 600 clamp(29px, 3vw, 42px)/1.05 var(--display); letter-spacing: -.045em; }
+    .detail-copy { max-width: 540px; margin: 18px 0 0; color: var(--muted); font-size: 13px; line-height: 1.8; }
+    .detail-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 21px; }
+    .tag { padding: 7px 9px; border: 1px solid var(--line); color: #424c43; font: 10px var(--mono); }
+    .signal { padding: 20px 17px; border-left: 2px solid var(--coral); background: var(--cream); }
+    .signal-label { color: var(--muted); font: 9px var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .signal strong { display: block; margin: 12px 0 8px; font: 600 20px/1.1 var(--display); letter-spacing: -.035em; }
+    .signal p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .playbook { padding: 93px 0 100px; color: var(--paper); background: var(--ink); }
+    .playbook .section-kicker { color: var(--green); }
+    .playbook .section-head { margin-bottom: 48px; }
+    .playbook .section-intro { color: #b4bcb2; }
+    .playbook-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #566056; }
+    .play { min-height: 240px; padding: 24px 28px 20px 0; border-right: 1px solid #566056; }
+    .play:not(:first-child) { padding-left: 28px; }
+    .play:last-child { border-right: 0; }
+    .play-number { color: var(--green); font: 11px var(--mono); }
+    .play h3 { max-width: 260px; margin: 37px 0 12px; font: 500 24px/1.12 var(--display); letter-spacing: -.035em; }
+    .play p { max-width: 310px; margin: 0; color: #b4bcb2; font-size: 12px; line-height: 1.7; }
+    .source-section { padding: 76px 0 70px; }
+    .source-top { display: grid; grid-template-columns: .85fr 1fr; gap: 8%; padding-bottom: 37px; border-bottom: 1px solid var(--line); }
+    .source-top h2 { font-size: 36px; }
+    .source-top p { max-width: 530px; margin: 2px 0 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .source-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .source { min-height: 112px; padding: 22px 20px 20px 0; border-bottom: 1px solid var(--line); }
+    .source:not(:nth-child(3n + 1)) { padding-left: 20px; border-left: 1px solid var(--line); }
+    .source a { font: 600 14px var(--display); text-decoration: none; }
+    .source a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .source p { margin: 8px 0 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+    footer { padding: 23px 0 32px; display: flex; justify-content: space-between; gap: 20px; color: var(--muted); font: 10px var(--mono); }
+    footer a { text-decoration: none; }
+    @media (max-width: 850px) {
+      .shell { width: min(100% - 40px, 700px); }
+      .hero { grid-template-columns: 1fr .8fr; gap: 5%; padding: 58px 0; }
+      h1 { font-size: clamp(54px, 9vw, 72px); }
+      .hero-art { min-height: 360px; }
+      .ticker-item { gap: 9px; }
+      .ticker-item:not(:first-child) { padding-left: 12px; }
+      .ticker-title { font-size: 14px; }
+      .timeline { grid-template-columns: 225px 1fr; }
+      .year-detail { grid-template-columns: 1fr; padding: 34px 6%; }
+      .signal { max-width: 330px; }
+    }
+    @media (max-width: 620px) {
+      .shell { width: calc(100% - 36px); }
+      .topbar { height: 62px; }
+      .top-nav { gap: 15px; font-size: 11px; }
+      .issue { display: none; }
+      .hero { padding: 48px 0 43px; grid-template-columns: 1fr; gap: 34px; }
+      .eyebrow { margin-bottom: 19px; }
+      h1 { max-width: 500px; font-size: clamp(55px, 14vw, 76px); }
+      .hero-copy { margin-top: 18px; font-size: 14px; }
+      .hero-art { min-height: 330px; margin: 0 7px 11px 0; }
+      .hero-photo { inset: 0 14px 18px 0; width: calc(100% - 14px); height: calc(100% - 18px); }
+      .hero-art::after { inset: 17px 0 0 17px; }
+      .art-stamp { width: 94px; height: 94px; right: -4px; font-size: 11px; }
+      .ticker { grid-template-columns: repeat(2, 1fr); }
+      .ticker-item { min-height: 76px; padding: 14px 9px 14px 0; border-bottom: 1px solid var(--line); }
+      .ticker-item:not(:first-child) { padding-left: 12px; }
+      .ticker-item:nth-child(2) { border-right: 0; }
+      .ticker-item:nth-child(3), .ticker-item:nth-child(4) { border-bottom: 0; }
+      .ticker-title { font-size: 13px; }
+      .ticker-note { font-size: 10px; }
+      .section { padding: 72px 0; }
+      .section-head { display: block; margin-bottom: 27px; }
+      .section-intro { width: auto; margin-top: 15px; }
+      .timeline { grid-template-columns: 1fr; }
+      .year-list { display: grid; grid-template-columns: repeat(4, 1fr); padding: 10px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+      .year-button { justify-content: center; padding: 12px 4px; border: 0; font-size: 13px; }
+      .year-button .arrow { display: none; }
+      .year-detail { min-height: 0; padding: 30px 0; gap: 23px; }
+      .year-detail h3 { font-size: 34px; }
+      .playbook { padding: 72px 0; }
+      .playbook .section-head { margin-bottom: 28px; }
+      .playbook-grid { grid-template-columns: 1fr; }
+      .play, .play:not(:first-child) { min-height: 0; padding: 20px 0 23px; border-right: 0; border-bottom: 1px solid #566056; }
+      .play:last-child { border-bottom: 0; }
+      .play h3 { margin: 20px 0 9px; font-size: 21px; }
+      .source-section { padding: 62px 0 45px; }
+      .source-top { grid-template-columns: 1fr; gap: 16px; padding-bottom: 23px; }
+      .source-top h2 { font-size: 32px; }
+      .source-grid { grid-template-columns: 1fr 1fr; }
+      .source { min-height: 105px; padding: 17px 10px 15px 0; }
+      .source:not(:nth-child(3n + 1)) { padding-left: 0; border-left: 0; }
+      .source:nth-child(even) { padding-left: 12px; border-left: 1px solid var(--line); }
+      .source a { font-size: 12px; }
+      .source p { font-size: 10px; }
+      footer { flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="shell topbar">
+    <a class="wordmark" href="#top" aria-label="SaaS Sales, home"><span class="mark">S/</span> FIELD NOTES <span class="issue">NO. 04</span></a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a href="#timeline">The timeline</a>
+      <a href="#playbook">What works now</a>
+      <a href="#sources">Sources</a>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">A field guide to the commercial reset · 2022—25</p>
+        <h1 id="hero-title">The SaaS<br>sales <span>reset.</span></h1>
+        <p class="hero-copy">Four years changed the job. Buyers got more careful, efficiency became the mandate, and AI moved into the sales stack. Here’s what shifted, and what still earns a yes.</p>
+        <div class="hero-actions">
+          <a class="button" href="#timeline">Explore the timeline <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a class="text-link" href="#playbook">Skip to the playbook</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Sales team reviewing a deal together">
+        <img class="hero-photo" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85" alt="Colleagues collaborating around a table in a bright studio" fetchpriority="high">
+        <span class="art-label">Field notes / 22—25</span>
+        <span class="art-stamp">Less noise.<br>More proof.</span>
+        <span class="hero-caption">THE BUYER HAS CHANGED THE BRIEF.</span>
+      </div>
+    </section>
+    <section class="shell ticker" aria-label="Four-year overview">
+      <div class="ticker-item"><span class="ticker-year">22</span><div><div class="ticker-title">The reset</div><div class="ticker-note">Budgets get a second look</div></div></div>
+      <div class="ticker-item"><span class="ticker-year">23</span><div><div class="ticker-title">Efficiency</div><div class="ticker-note">Growth needs a case</div></div></div>
+      <div class="ticker-item"><span class="ticker-year">24</span><div><div class="ticker-title">AI moves in</div><div class="ticker-note">From hype to workflow</div></div></div>
+      <div class="ticker-item"><span class="ticker-year">25</span><div><div class="ticker-title">Execution</div><div class="ticker-note">Trust beats volume</div></div></div>
+    </section>
+    <section class="shell section" id="timeline" aria-labelledby="timeline-title">
+      <div class="section-head">
+        <div><p class="section-kicker">01 / The market, year by year</p><h2 id="timeline-title">A different<br>kind of growth.</h2></div>
+        <p class="section-intro">The headline changed from “grow faster” to “prove it.” Pick a year to see how the commercial conversation evolved.</p>
+      </div>
+      <div class="timeline">
+        <div class="year-list" role="tablist" aria-label="Select a year">
+          <button class="year-button" id="tab-2022" role="tab" aria-selected="true" aria-controls="year-panel" data-year="2022"><span class="year">2022</span><span class="arrow" aria-hidden="true">→</span></button>
+          <button class="year-button" id="tab-2023" role="tab" aria-selected="false" aria-controls="year-panel" data-year="2023" tabindex="-1"><span class="year">2023</span><span class="arrow" aria-hidden="true">→</span></button>
+          <button class="year-button" id="tab-2024" role="tab" aria-selected="false" aria-controls="year-panel" data-year="2024" tabindex="-1"><span class="year">2024</span><span class="arrow" aria-hidden="true">→</span></button>
+          <button class="year-button" id="tab-2025" role="tab" aria-selected="false" aria-controls="year-panel" data-year="2025" tabindex="-1"><span class="year">2025</span><span class="arrow" aria-hidden="true">→</span></button>
+        </div>
+        <article class="year-detail" id="year-panel" role="tabpanel" aria-labelledby="tab-2022" tabindex="0">
+          <div class="detail-main"><p class="detail-year" id="detail-year">THE RESET BEGINS / 2022</p><h3 id="detail-title">The easy-growth era hits a wall.</h3><p class="detail-copy" id="detail-copy">As capital costs rose and public software valuations reset, SaaS leaders put a sharper lens on spend. Sales teams faced more scrutiny, slower approvals, and a renewed need to connect each purchase to a business outcome.</p><div class="detail-list" id="detail-tags"><span class="tag">Budget scrutiny</span><span class="tag">Longer approvals</span><span class="tag">Retention matters</span></div></div>
+          <aside class="signal"><span class="signal-label">The buyer asks</span><strong id="detail-signal">“Why this, why now?”</strong><p id="detail-signal-copy">Urgency is no longer enough. Make the cost of inaction visible.</p></aside>
+        </article>
+      </div>
+    </section>
+    <section class="playbook" id="playbook" aria-labelledby="playbook-title">
+      <div class="shell">
+        <div class="section-head">
+          <div><p class="section-kicker">02 / The current playbook</p><h2 id="playbook-title">The deal still<br>runs on trust.</h2></div>
+          <p class="section-intro">Tools change the pace. The durable edge is still doing the hard, human parts of selling unusually well.</p>
+        </div>
+        <div class="playbook-grid">
+          <article class="play"><span class="play-number">01 — GET SPECIFIC</span><h3>Sell the result, not the category.</h3><p>Translate features into the buyer’s own operating metrics. A credible business case beats another broad promise of transformation.</p></article>
+          <article class="play"><span class="play-number">02 — MAKE IT EASY</span><h3>Respect the buying group.</h3><p>Give champions useful material to share, answer finance and security concerns early, and make the next step obvious to every stakeholder.</p></article>
+          <article class="play"><span class="play-number">03 — USE AI WELL</span><h3>Automate prep. Keep judgment.</h3><p>Use AI for research, synthesis, and admin. Verify the output, protect customer data, and keep discovery and negotiation genuinely human.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="shell source-section" id="sources" aria-labelledby="sources-title">
+      <div class="source-top">
+        <div><p class="section-kicker">03 / Further reading</p><h2 id="sources-title">Follow the evidence.</h2></div>
+        <p>This is an editorial synthesis, not a single benchmark or a claim that every SaaS segment moved in lockstep. The linked research offers broader context on software markets, B2B buying behavior, and sales-team priorities. Outcomes vary by stage, category, and go-to-market model.</p>
+      </div>
+      <div class="source-grid">
+        <article class="source"><a href="https://www.bvp.com/atlas/state-of-the-cloud-2022" target="_blank" rel="noreferrer">State of the Cloud 2022 ↗</a><p>Bessemer Venture Partners · Cloud market and funding context</p></article>
+        <article class="source"><a href="https://www.bvp.com/atlas/state-of-the-cloud-2023" target="_blank" rel="noreferrer">State of the Cloud 2023 ↗</a><p>Bessemer Venture Partners · Efficiency shift and early AI outlook</p></article>
+        <article class="source"><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/b2b-sales-the-new-omnichannel-approach" target="_blank" rel="noreferrer">McKinsey B2B Pulse ↗</a><p>B2B buying behavior across digital and human channels</p></article>
+        <article class="source"><a href="https://www.salesforce.com/resources/research-reports/state-of-sales/" target="_blank" rel="noreferrer">Salesforce State of Sales ↗</a><p>Sales-team research hub · Edition and findings update over time</p></article>
+        <article class="source"><a href="https://www.saas-capital.com/research/" target="_blank" rel="noreferrer">SaaS Capital ↗</a><p>Private SaaS benchmarks · Growth and financing data</p></article>
+        <article class="source"><a href="https://www.mckinsey.com/capabilities/growth-marketing-and-sales/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier" target="_blank" rel="noreferrer">McKinsey on Gen AI ↗</a><p>Generative AI research · Productivity potential across functions</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="shell"><span>SAAS SALES / FIELD NOTES / 2022—25</span><a href="#top">BACK TO TOP ↑</a></footer>
+  <script>
+    const yearNotes = {
+      2022: {
+        eyebrow: "THE RESET BEGINS / 2022",
+        title: "The easy-growth era hits a wall.",
+        copy: "As capital costs rose and public software valuations reset, SaaS leaders put a sharper lens on spend. Sales teams faced more scrutiny, slower approvals, and a renewed need to connect each purchase to a business outcome.",
+        tags: ["Budget scrutiny", "Longer approvals", "Retention matters"],
+        ask: "“Why this, why now?”",
+        response: "Urgency is no longer enough. Make the cost of inaction visible."
+      },
+      2023: {
+        eyebrow: "EFFICIENCY TAKES THE LEAD / 2023",
+        title: "Growth has to show its working.",
+        copy: "The operating conversation moved from expansion at any cost toward durable growth. In the deal room, that meant tighter qualification, clearer payback logic, and greater attention to adoption and renewals after the signature.",
+        tags: ["ROI proof", "Tighter qualification", "Efficient growth"],
+        ask: "“What changes if we do?”",
+        response: "Tie the investment to a measurable workflow or business result."
+      },
+      2024: {
+        eyebrow: "AI ENTERS THE WORKFLOW / 2024",
+        title: "The new tool is not the new strategy.",
+        copy: "Generative AI moved into seller conversations and daily tools. Research, call summaries, and first drafts got faster; differentiation still came from context, sound judgment, and evidence that the product solved a real problem.",
+        tags: ["AI experiments", "Workflow fit", "Human review"],
+        ask: "“Can I trust the answer?”",
+        response: "Be precise about what the product does, and where human oversight stays."
+      },
+      2025: {
+        eyebrow: "EXECUTION BECOMES THE EDGE / 2025",
+        title: "Less noise. More follow-through.",
+        copy: "As AI features spread, a faster first touch is not a durable advantage. Strong teams focus on relevant outreach, coordinated buying groups, credible proof, and a clean handoff from the sale to the outcome promised.",
+        tags: ["Relevant outreach", "Buying-group alignment", "Prove adoption"],
+        ask: "“Will this work here?”",
+        response: "Show a believable path from this buyer’s current state to the result."
+      }
+    };
+    const tabs = [...document.querySelectorAll(".year-button")];
+    const panel = document.querySelector("#year-panel");
+    function selectYear(year, moveFocus = false) {
+      const note = yearNotes[year];
+      tabs.forEach((tab) => {
+        const selected = tab.dataset.year === String(year);
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+        if (selected && moveFocus) tab.focus();
+      });
+      panel.setAttribute("aria-labelledby", `tab-${year}`);
+      panel.style.animation = "none";
+      void panel.offsetWidth;
+      panel.style.animation = "";
+      document.querySelector("#detail-year").textContent = note.eyebrow;
+      document.querySelector("#detail-title").textContent = note.title;
+      document.querySelector("#detail-copy").textContent = note.copy;
+      document.querySelector("#detail-signal").textContent = note.ask;
+      document.querySelector("#detail-signal-copy").textContent = note.response;
+      document.querySelector("#detail-tags").replaceChildren(...note.tags.map((tag) => {
+        const item = document.createElement("span");
+        item.className = "tag";
+        item.textContent = tag;
+        return item;
+      }));
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectYear(tab.dataset.year));
+      tab.addEventListener("keydown", (event) => {
+        let nextIndex = index;
+        if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+        else if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+        else if (event.key === "Home") nextIndex = 0;
+        else if (event.key === "End") nextIndex = tabs.length - 1;
+        else return;
+        event.preventDefault();
+        selectYear(tabs[nextIndex].dataset.year, true);
+      });
+    });
+  </script>
+</body>
+</html>
